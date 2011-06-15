@@ -1,5 +1,5 @@
 !version: $Revision: 1.1.1.1 $
-!date: $Date: 2003/12/10 21:06:53 $
+!date: $Date: 2011/06/15 10:11:53 $
 !Title: poc-dbxref 
 !Plant Ontology Consortium
 !www.plantontology.org
@@ -260,6 +260,14 @@ object: Protein identifier.
 example: NCBI_NP:123456
 generic_url: http://www.ncbi.nlm.nih.gov/
 url_syntax:
+
+abbreviation: OBO_SF_PO
+database: Source Forge OBO Plant Ontology (PO) term request tracker
+object: Term request
+example_id: OBO_SF_PO:3184921
+generic_url: http://sourceforge.net/tracker/?func=browse&group_id=76834&atid=835555
+url_syntax: https://sourceforge.net/tracker/index.php?func=detail&aid=[example_id]&group_id=76834&atid=835555
+url_example: https://sourceforge.net/tracker/index.php?func=detail&aid=3184921&group_id=76834&atid=835555
 
 abbreviation: PDB
 database: Protein Data Bank.
