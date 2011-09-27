@@ -1,9 +1,10 @@
 !version: $Revision: 1.1.1.1 $
-!date: $Date: 2011/06/15 10:11:53 $
+!date: $Date: 2011/09/27 14:50:00 $
 !Title: poc-dbxref 
 !Plant Ontology Consortium
 !www.plantontology.org
-!created by : Pankaj Jaiswal
+!created by: Pankaj Jaiswal
+!modified by: Ramona Walls
 !Note that url's are not necessarily stable entities and that some
 !databases may have many other access routes or mirror sites.
 !
@@ -103,10 +104,10 @@ object: Doesn't link anywhere yet.
 abbreviation: GR
 database: Gramene: A Comparative Mapping Resource for Grains.
 object: Protein
-example: GR:P93436
+example_id: GR:P93436
 generic_url: http://www.gramene.org/
-url_syntax:  http://www.gramene.org/perl/protein_search?acc=Accession number 
-example: http://www.gramene.org/perl/protein_search?acc=P93436 
+url_syntax:  http://www.gramene.org/db/protein/protein_search?acc=[example_id]
+url_example: http://www.gramene.org/db/protein/protein_search?acc=P93436
 
 abbreviation: GR_REF
 database: Gramene: A Comparative Mapping Resource for Grains.
@@ -119,10 +120,10 @@ example: http://www.gramene.org/perl/pub_search?ref_id=659
 abbreviation: GR_MUT
 database: Gramene: A Comparative Mapping Resource for Grains.
 object: Mutants
-example: GR_MUT:GR:0060198
+example_id: GR_MUT:GR:0060198
 generic_url: http://www.gramene.org/
-url_syntax: http://www.gramene.org/perl/mutant/search_mutant?id=ID number
-example: http://www.gramene.org/perl/mutant/search_mutant?id=GR:0060198
+url_syntax: http://www.gramene.org/db/genes/search_gene?acc=[example_id]
+url_example: http://www.gramene.org/db/genes/search_gene?acc=GR:0060198
 
 abbreviation: GR_QTL
 database: Gramene: A Comparative Mapping Resource for Grains.
@@ -193,24 +194,12 @@ url_syntax:
 url_example: http://www.ncbi.nlm.nih.gov:80/LocusLink/LocRpt.cgi?l=3195
 
 abbreviation: MaizeGDB
-database: Maize Genetics and Genome Database.
-object: Canonical name of gene.
-example: MaizeGDB:apb1
+database: Maize Genetics and Genomics Database
+object: Anything with a MaizeGDB Object ID Number or Gene Model Name
+example_id: MaizeGDB:881225
 generic_url: http://www.maizegdb.org/
-url_syntax: http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term=
-object: Phenotype of gene variant
-example: MaizeGDB:liguleless
-url_syntax: http://www.maizegdb.org/cgi-bin/displayphenoresults.cgi?term=
- 
-abbreviation: MaizeGDBID
-database: Maize Genome Database.
-object: locus Identifier.
-example: MaizeGDBID:12008
-generic_url: http://www.maizegdb.org/
-url_syntax: http://www.maizegdb.org/cgi-bin/displaylocusrecord.cgi?id=
-object: phenotype identifier
-example:MaizeGDBID:61504
-url_syntax:http://www.maizegdb.org/cgi-bin/displayphenorecord.cgi?id=
+url_syntax: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=[example_id]
+url_example: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=881225 
 
 abbreviation: MEDLINE
 database: The Medline literature database.
@@ -263,7 +252,7 @@ url_syntax:
 
 abbreviation: OBO_SF_PO
 database: Source Forge OBO Plant Ontology (PO) term request tracker
-object: Term request
+object: Plant Ontology term request
 example_id: OBO_SF_PO:3184921
 generic_url: http://sourceforge.net/tracker/?func=browse&group_id=76834&atid=835555
 url_syntax: https://sourceforge.net/tracker/index.php?func=detail&aid=[example_id]&group_id=76834&atid=835555
@@ -302,6 +291,15 @@ example: PMID:4208797
 generic_url: http://www.ncbi.nlm.nih.gov/PubMed/
 url_syntax:
 url_example: http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=4208797&dopt=Abstract
+
+abbreviation: PO_REF
+database: Plant Ontology custom references
+object: Reference identifier
+example_id: PO_REF:00001http://wiki.plantontology.org:8080/index.php/PO_references
+http://www.ncbi.nlm.nih.gov/PubMed/
+url_syntax: http://wiki.plantontology.org:8080/index.php/PO_REF:[example_id]
+url_example: http://wiki.plantontology.org:8080/index.php/PO_REF:00001
+
 
 abbreviation: Prosite
 database: Prosite. Database of protein families and domains.
