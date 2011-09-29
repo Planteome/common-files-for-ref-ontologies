@@ -295,8 +295,8 @@ url_example: http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=Pu
 abbreviation: PO_REF
 database: Plant Ontology custom references
 object: Reference identifier
-example_id: PO_REF:00001http://wiki.plantontology.org:8080/index.php/PO_references
-http://www.ncbi.nlm.nih.gov/PubMed/
+example_id: PO_REF:00001
+generic url: http://wiki.plantontology.org:8080/index.php/PO_references
 url_syntax: http://wiki.plantontology.org:8080/index.php/PO_REF:[example_id]
 url_example: http://wiki.plantontology.org:8080/index.php/PO_REF:00001
 
@@ -327,6 +327,30 @@ object: Identifier.
 example: RESID:AA0062
 generic_url: ftp://ftp.ncifcrf.gov/pub/users/residues/
 url_syntax:
+
+abbreviation: SGN_gene
+database: Sol Genomics Network
+object: locus identifier
+example_id: SGN_gene:7740
+generic url: http://solgenomics.net/
+url_syntax: http://solgenomics.net/phenome/locus_display.pl?locus_id=[example_id]
+url_example: http://solgenomics.net/phenome/locus_display.pl?locus_id=7740
+
+abbreviation: SGN_germplasm
+database: Sol Genomics Network
+object: stock/accession/germplasm identifier
+example_id: SGN_germplasm:6583
+generic url: http://solgenomics.net/
+url_syntax: http://solgenomics.net/stock/[example_id]/view/
+url_example: http://solgenomics.net/stock/6583/view/
+
+abbreviation: SGN_ref
+database: Sol Genomics Network
+object: reference identifier
+example_id: SGN_ref:800
+generic url: http://solgenomics.net/
+url_syntax: http://www.sgn.cornell.edu/chado/publication.pl?pub_id=[example_id]
+url_example: http://www.sgn.cornell.edu/chado/publication.pl?pub_id=800
 
 abbreviation: SMD
 database: Stanford Microarray Database
