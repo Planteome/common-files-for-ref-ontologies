@@ -1,5 +1,5 @@
 !version: $Revision: 1.1.1.1 $
-!date: $Date: 2011/09/27 14:50:00 $
+!date: $Date: 2011/10/06 12:34:00 $
 !Title: poc-dbxref 
 !Plant Ontology Consortium
 !www.plantontology.org
@@ -33,6 +33,14 @@ url_syntax: http://arabidopsis.org/servlets/TairObject?type=locus&name=
 example_url: http://mips.gsf.de/cgi-bin/proj/thal/search_gene?code=At2g17950
 example_url: http://www.tigr.org/tigr-scripts/euk_manatee/shared/ORF_infopage.cgi?db=ath1&orf=At2g17950
 example_url: http://arabidopsis.org/servlets/TairObject?type=locus&name=At2g17950
+
+abbreviation: AP
+database: Angiosperm Phylogeny Website
+object: definitions for anatomy terms
+example_id: AP:web
+generic_url: http://www.mobot.org/mobot/research/apweb/
+url_syntax: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
+url_example: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
 
 abbreviation: bib
 database: AGRICOLA
@@ -115,7 +123,7 @@ object: Reference
 example: GR_REF:659
 generic_url: http://www.gramene.org/
 url_syntax: http://www.gramene.org/perl/pub_search?ref_id=ID number
-example: http://www.gramene.org/perl/pub_search?ref_id=659
+url_example: http://www.gramene.org/perl/pub_search?ref_id=659
 
 abbreviation: GR_MUT
 database: Gramene: A Comparative Mapping Resource for Grains.
@@ -131,7 +139,7 @@ object: Mutants
 example: GR_QTL:CQA11
 generic_url: http://www.gramene.org/
 url_syntax: http://www.gramene.org/perl/mutant/search_mutant?id=ID number
-example: http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id=CQA11
+url_example: http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id=CQA11
 
 abbreviation: IND
 database: AGRICOLA
