@@ -37,7 +37,7 @@ example_url: http://arabidopsis.org/servlets/TairObject?type=locus&name=At2g1795
 abbreviation: AP
 database: Angiosperm Phylogeny Website
 object: definitions for anatomy terms
-example_id: AP:web
+example_id: APweb:Glossary
 generic_url: http://www.mobot.org/mobot/research/apweb/
 url_syntax: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
 url_example: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
