@@ -174,9 +174,9 @@ abbreviation: Jaiswal_Lab
 database: Jaiswal_Lab
 object: mRNA
 example_id: Jaiswal_Lab:gene00002
-generic_url: http://jaiswallab.cgrb.oregonstate.edu/
-url_syntax: http://jaiswallab.cgrb.oregonstate.edu/
-url_example: http://jaiswallab.cgrb.oregonstate.edu/ 
+generic_url: http://wiki.plantontology.org:8080/index.php/PO_REF:00008
+url_syntax: http://wiki.plantontology.org:8080/index.php/PO_REF:00008
+url_example: http://wiki.plantontology.org:8080/index.php/PO_REF:00008
 
 abbreviation: KEGG
 database: Kyoto Encyclopedia of Genes and Genomes.
