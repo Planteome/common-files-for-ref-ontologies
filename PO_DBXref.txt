@@ -1,12 +1,11 @@
 !version: $Revision: 1.1.1.1 $
-!date: $Date: 2011/10/06 12:34:00 $
-!Title: poc-dbxref 
+!date: $Date: 12/15/2011 13:15:00 $
+!Title:PO_DBxref.txt
 !Plant Ontology Consortium
 !www.plantontology.org
 !created by: Pankaj Jaiswal
-!modified by: Ramona Walls
-!Note that url's are not necessarily stable entities and that some
-!databases may have many other access routes or mirror sites.
+!modified by: Laurel Cooper
+!Note that url's are not necessarily stable entities and that some databases may have many other access routes or mirror sites.
 !
 Syntax for database cross-references either within nodes in an ontology or within other PO documents, 
 e.g. PO.defs, will be standardized and that, as far as possible, we use the  abbreviations used by 
