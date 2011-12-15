@@ -13,14 +13,20 @@ e.g. PO.defs, will be standardized and that, as far as possible, we use the  abb
 the NCBI. See: http://www.ncbi.nlm.nih.gov/collab/db_xref.html. 
 The syntax would then be: Database_Abbreviation:identifier (as recently proposed/adopted by GO). 
 
-
-
 abbreviation: PO
 definition:Plant Ontology Consortium
 example:PO
 generic_url:http://www.plantontology.org
 url_syntax:
 
+
+abbreviation: AgBase
+database: AgBase
+object: Anything with a Uniprot Gene Name or GenBank ID or GO ID
+example_id: AgBase:Q8VWP8
+generic_url: http://agbase.msstate.edu/index.html
+url_syntax: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&uid=[example_id]_GOSHI&gb_acc=[example_id]
+url_example: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&uid=Q8VWP8_GOSHI&gb_acc=Q8VWP8 
 
 abbreviation: AGI_LocusCode
 database: Arabidopsis Genome Initiative (TAIR, TIGR, MIPS)
@@ -47,6 +53,17 @@ database: AGRICOLA
 object: call number
 example: MARC TAG 016 or bib=0000-05160
 generic_url: http://www.nal.usda.gov/ag98/
+ 
+
+
+abbreviation: cosmoss_PpV1.2
+database: plantco.de|cosmoss.org
+object: Anything with a Cosmoss accession number
+example_id: cosmoss_PpV1.2:Pp1s47_77V2.1
+generic_url: https://www.cosmoss.org/annotation/genonaut
+url_syntax: https://www.cosmoss.org/annotation/genonaut?accession=ACCESSION&version=V1.2
+url_example: https://www.cosmoss.org/annotation/genonaut?accession=Pp1s53_22V2.1&version=V1.2 
+
 
 abbreviation: EC
 database: The Enzyme Commission.
