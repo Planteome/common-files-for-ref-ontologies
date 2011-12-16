@@ -24,7 +24,7 @@ database: AgBase
 object: Anything with a Uniprot Gene Name or GenBank ID or GO ID
 example_id: AgBase:Q8VWP8
 generic_url: http://agbase.msstate.edu/index.html
-url_syntax: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&uid=[example_id]_GOSHI&gb_acc=[example_id]
+url_syntax: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&gb_acc=[example_id]
 url_example: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&uid=Q8VWP8_GOSHI&gb_acc=Q8VWP8 
 
 abbreviation: AGI_LocusCode
