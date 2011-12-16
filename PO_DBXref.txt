@@ -24,8 +24,8 @@ database: AgBase
 object: Anything with a Uniprot Gene Name or GenBank ID or GO ID
 example_id: AgBase:Q8VWP8
 generic_url: http://agbase.msstate.edu/index.html
-url_syntax: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&gb_acc=[example_id]
-url_example: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&gb_acc=Q8VWP8 
+url_syntax: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&uid=[example_id]_GOSHI&gb_acc=[example_id]
+url_example: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&uid=Q8VWP8_GOSHI&gb_acc=Q8VWP8 
 
 abbreviation: AGI_LocusCode
 database: Arabidopsis Genome Initiative (TAIR, TIGR, MIPS)
@@ -60,8 +60,8 @@ database: plantco.de|cosmoss.org
 object: Anything with a Cosmoss accession number
 example_id: cosmoss_PpV1.2:Pp1s47_77V2.1
 generic_url: https://www.cosmoss.org/annotation/genonaut
-url_syntax: https://www.cosmoss.org/annotation/genonaut?accession=[example_id]
-url_example: https://www.cosmoss.org/annotation/genonaut?accession=Pp1s53_22V2.1 
+url_syntax: https://www.cosmoss.org/annotation/genonaut?accession=ACCESSION&version=V1.2
+url_example: https://www.cosmoss.org/annotation/genonaut?accession=Pp1s53_22V2.1&version=V1.2 
 
 
 abbreviation: EC
