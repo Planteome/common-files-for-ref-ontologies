@@ -1,10 +1,10 @@
 !version: $Revision: 1.1.1.1 $
-!date: $Date: 12/15/2011 13:15:00 $
+!date: $Date: 02/21/2012 10:15:00 $
 !Title:PO_DBxref.txt
 !Plant Ontology Consortium
 !www.plantontology.org
 !created by: Pankaj Jaiswal
-!modified by: Laurel Cooper
+!modified by: Ramona Walls
 !Note that url's are not necessarily stable entities and that some databases may have many other access routes or mirror sites.
 !
 Syntax for database cross-references either within nodes in an ontology or within other PO documents, 
@@ -185,7 +185,6 @@ generic_url: http://isbntools.com/
 url_syntax: http://my.linkbaton.com/get?lbCC=q&nC=q&genre=book&item=
 url_example: http://my.linkbaton.com/get?lbCC=q&nC=q&genre=book&item=0781702534
 
-
 abbreviation: Jaiswal_Lab
 database: Jaiswal_Lab
 object: mRNA
@@ -193,6 +192,14 @@ example_id: Jaiswal_Lab:gene00002
 generic_url: http://wiki.plantontology.org:8080/index.php/PO_REF:00008
 url_syntax: http://wiki.plantontology.org:8080/index.php/PO_REF:00008
 url_example: http://wiki.plantontology.org:8080/index.php/PO_REF:00008
+
+abbreviation: JSTOR
+database: Digital archive of scholarly articles
+object: journal article
+example_id: JSTOR:3093870
+generic_url: http://www.jstor.org/
+url_syntax: http://www.jstor.org/stable/[example_id]
+url_example: http://www.jstor.org/stable/3093870 
 
 abbreviation: KEGG
 database: Kyoto Encyclopedia of Genes and Genomes.
