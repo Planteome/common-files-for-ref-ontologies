@@ -241,9 +241,9 @@ abbreviation: Jaiswal_Lab
 database: Jaiswal_Lab
 object: mRNA
 example_id: Jaiswal_Lab:gene00002
-generic_url: http://wiki.plantontology.org:8080/index.php/PO_REF:00008
-url_syntax: http://wiki.plantontology.org:8080/index.php/PO_REF:00008
-url_example: http://wiki.plantontology.org:8080/index.php/PO_REF:00008
+generic_url: http://wiki.plantontology.org/index.php/PO_REF:00008
+url_syntax: http://wiki.plantontology.org/index.php/PO_REF:00008
+url_example: http://wiki.plantontology.org/index.php/PO_REF:00008
 
 abbreviation: JSTOR
 database: Digital archive of scholarly articles
@@ -441,9 +441,9 @@ abbreviation: PO_REF
 database: Plant Ontology custom references
 object: Reference identifier
 example_id: PO_REF:00001
-generic url: http://wiki.plantontology.org:8080/index.php/PO_references
-url_syntax: http://wiki.plantontology.org:8080/index.php/PO_REF:$acc_no
-url_example: http://wiki.plantontology.org:8080/index.php/PO_REF:00001
+generic url: http://wiki.plantontology.org/index.php/PO_references
+url_syntax: http://wiki.plantontology.org/index.php/PO_REF:$acc_no
+url_example: http://wiki.plantontology.org/index.php/PO_REF:00001
 
 abbreviation: Prosite
 database: Prosite. Database of protein families and domains.
