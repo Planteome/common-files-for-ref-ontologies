@@ -1,14 +1,12 @@
-Got as far as GO
-
 !version: $Revision: 1.1.1.1 $
-!date: $Date: 03/05/2012 15:15:00 $
+!date: $Date: 03/23/2012 17:50:00 $
 !Title:PO_DBxref.txt
 !Plant Ontology Consortium
 !www.plantontology.org
 !created by: Pankaj Jaiswal
 !modified by: Ramona Walls
 !Note that url's are not necessarily stable entities and that some databases may have many other access routes or mirror sites.
-!Syntax for database cross-references either within nodes in an ontology or within other PO documents, e.g. PO.defs, will be standardized and, as far as possible, we use the  abbreviations used by the NCBI. See: http://www.ncbi.nlm.nih.gov/collab/db_xref.html. The syntax would then be: Database_Abbreviation:identifier (as recently proposed/adopted by GO). 
+!Syntax for database cross-references either within nodes in an ontology or within other PO documents, e.g. PO.defs, will be standardized and, as far as possible, we use the  abbreviations used by the NCBI. See: http://www.ncbi.nlm.nih.gov/collab/db_xref.html. The syntax would then be: Database_Abbreviation:identifier (as adopted by GO). 
 !This file has been updated to reflect the perl file that includes the current abbreviations being used on AmiGO by the Plant Ontology. Stanzas for abbreviations that are no longer in use are still included, but are followed by a comment to that effect.
 !unknown fields have been left blank
 
@@ -205,6 +203,14 @@ generic_url: http://www.gramene.org/
 url_syntax: http://www.gramene.org/db/literature/pub_search?ref_id=$acc_no
 url_example: http://www.gramene.org/perl/pub_search?ref_id=659
 
+abbreviation: Image_at_PlantSystematics
+database: PlantSystematics.org
+object: image id
+example: Image_at_PlantSystematics:37658
+generic_url: http://plantsystematics.org
+url_syntax: http://www.plantsystematics.org/imagebyid_$acc_no.html
+url_example: http://www.plantsystematics.org/imagebyid_37658.html
+
 abbreviation: IND
 database: AGRICOLA
 object: call number
@@ -229,13 +235,13 @@ generic_url: http://www.ebi.ac.uk/IPI/IPIhelp.html
 !not in use
 
 abbreviation: ISBN
-database: International Standard Book Number.
-object: Identifier.
-example: ISBN:0781702534
-generic_url: http://isbntools.com/
-url_syntax: http://my.linkbaton.com/get?lbCC=q&nC=q&genre=book&item=
-url_example: http://my.linkbaton.com/get?lbCC=q&nC=q&genre=book&item=0781702534
-!not in use
+database: International Standard Book Number
+object: book identifier
+example: ISBN:0471738433
+http://openisbn.com/isbn/0471738433/
+generic_url: http://openisbn.com
+url_syntax: http://openisbn.com/isbn/$acc_no/
+url_example: http://openisbn.com/isbn/0471738433/
 
 abbreviation: Jaiswal_Lab
 database: Jaiswal_Lab
