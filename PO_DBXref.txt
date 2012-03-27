@@ -1,5 +1,5 @@
 !version: $Revision: 1.1.1.1 $
-!date: $Date: 03/23/2012 17:50:00 $
+!date: $Date: 03/27/2012 09:50:00 $
 !Title:PO_DBxref.txt
 !Plant Ontology Consortium
 !www.plantontology.org
@@ -17,7 +17,6 @@ example_id: PO:0025034
 generic_url:http://www.plantontology.org
 url_syntax:
 url_example:
-
 
 abbreviation: AgBase
 database: AgBase
@@ -443,6 +442,14 @@ generic_url: http://www.ncbi.nlm.nih.gov/PubMed/
 url_syntax:
 url_example: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=$acc_no
 
+abbreviation: POC
+database: Plant Ontology Consortium
+object: curator
+example_id: POC:curators
+generic url: http://wiki.plantontology.org/index.php/Main_Page
+url_syntax: http://wiki.plantontology.org/index.php/Plant_Ontology_curators
+url_example: http://wiki.plantontology.org/index.php/Plant_Ontology_curators
+
 abbreviation: PO_REF
 database: Plant Ontology custom references
 object: Reference identifier
@@ -497,14 +504,6 @@ example: RESID:AA0062
 generic_url: ftp://ftp.ncifcrf.gov/pub/users/residues/
 url_syntax:
 !not in use
-
-abbreviation: 
-database: 
-object: 
-example: 
-generic_url: 
-url_syntax:
-"rgd"=>"http://rgd.mcw.edu/tools/genes/genes_view.cgi?id=$acc_no",
 
 abbreviation: RAD
 database: RGD database
