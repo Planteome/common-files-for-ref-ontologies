@@ -202,10 +202,10 @@ generic_url: http://www.gramene.org/
 url_syntax: http://www.gramene.org/db/literature/pub_search?ref_id=$acc_no
 url_example: http://www.gramene.org/perl/pub_search?ref_id=659
 
-abbreviation: Image_at_PlantSystematics
+abbreviation: PlantSystematics_image_archive
 database: PlantSystematics.org
 object: image id
-example: Image_at_PlantSystematics:37658
+example: PlantSystematics_image_archivee:37658
 generic_url: http://plantsystematics.org
 url_syntax: http://www.plantsystematics.org/imagebyid_$acc_no.html
 url_example: http://www.plantsystematics.org/imagebyid_37658.html
