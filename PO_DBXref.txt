@@ -237,10 +237,10 @@ abbreviation: ISBN
 database: International Standard Book Number
 object: book identifier
 example: ISBN:0471738433
-http://openisbn.com/isbn/0471738433/
+http://openisbn.com/search.php?q=0471738433&isbn=1/
 generic_url: http://openisbn.com
-url_syntax: http://openisbn.com/isbn/$acc_no/
-url_example: http://openisbn.com/isbn/0471738433/
+url_syntax: http://openisbn.com/search.php?q=$acc_no&isbn=1/
+url_example: http://openisbn.com/search.php?q=0471738433&isbn=1/
 
 abbreviation: Jaiswal_Lab
 database: Jaiswal_Lab
