@@ -56,7 +56,14 @@ example: MARC TAG 016 or bib=0000-05160
 generic_url: http://www.nal.usda.gov/ag98/
 !not in use
 
-abbreviation: CDGdatabase: Candida Genomome Databaseobject: example_id: generic_url: http://www.candidagenome.orgurl_syntax: http://www.candidagenome.org/cgi-bin/locus.pl?locus=$acc_nourl_example: 
+abbreviation: CDG
+database: Candida Genomome Database
+object: 
+example_id: 
+generic_url: http://www.candidagenome.org
+url_syntax: http://www.candidagenome.org/cgi-bin/locus.pl?locus=$acc_no
+url_example: 
+
  
 abbreviation: cosmoss_PpV1.2
 database: plantco.de|cosmoss.org
@@ -66,10 +73,23 @@ generic_url: https://www.cosmoss.org/annotation/genonaut
 url_syntax: https://www.cosmoss.org/annotation/genonaut?accession=ACCESSION&version=V1.2
 url_example: https://www.cosmoss.org/annotation/genonaut?accession=Pp1s53_22V2.1&version=V1.2 
 
-abbreviation: DDBdatabase: Dictybaseobject: example_id: generic_url: http://dictybase.orgurl_syntax: http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=$acc_nourl_syntax: http://dictybase.org/db/cgi-bin/gene_page.pl?dictybaseid=$acc_no
+abbreviation: DDB
+database: Dictybase
+object: 
+example_id: 
+generic_url: http://dictybase.org
+url_syntax: http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=$acc_no
+url_syntax: http://dictybase.org/db/cgi-bin/gene_page.pl?dictybaseid=$acc_no
 url_example: 
 
-abbreviation: dros_cdnadatabase: object: example_id: generic_url: http://weasel.lbl.govurl_syntax: http://weasel.lbl.gov/cgi-bin/EST/community_query/ctgReport.pl?db=estlabtrack&amp;id_type=0&amp;id_value=$acc_nourl_example: 
+abbreviation: dros_cdna
+database: 
+object: 
+example_id: 
+generic_url: http://weasel.lbl.gov
+url_syntax: http://weasel.lbl.gov/cgi-bin/EST/community_query/ctgReport.pl?db=estlabtrack&amp;id_type=0&amp;id_value=$acc_no
+url_example: 
+
 !generic link not working
 
 abbreviation: EC
@@ -89,7 +109,14 @@ generic_url: http://www.ebi.ac.uk/embl/
 url_syntax: http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&amp;Submit=Go&amp;id=$acc_no
 url_example: http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&amp;Submit=Go&amp;id=AA816246
 
-abbreviation: ENSEMBLdatabase: Ensembl genome databaseobject: example_id: generic_url: http://www.ensembl.orgurl_syntax: http://www.ensembl.org/perl/protview?peptide=$acc_nourl_example: 
+abbreviation: ENSEMBL
+database: Ensembl genome database
+object: 
+example_id: 
+generic_url: http://www.ensembl.org
+url_syntax: http://www.ensembl.org/perl/protview?peptide=$acc_no
+url_example: 
+
 
 abbreviation: ENZYME
 database: The Swiss Institute of Bioinformatics database of Enzymes.
@@ -100,13 +127,51 @@ url_syntax: http://www.expasy.ch/cgi-bin/nicezyme.pl?
 url_example: http://www.expasy.ch/cgi-bin/nicezyme.pl?1.1.1.1
 !not in use
 
-abbreviation: FBdatabase: Flybaseobject: example_id: generic_url: http://flybase.bio.indiana.eduurl_syntax: http://flybase.bio.indiana.edu/reports/$acc_no.htmlurl_example: 
+abbreviation: FB
+database: Flybase
+object: 
+example_id: 
+generic_url: http://flybase.bio.indiana.edu
+url_syntax: http://flybase.bio.indiana.edu/reports/$acc_no.html
+url_example: 
 
-abbreviation: genedb_lmajordatabase: Gene DB, Leishmaniaobject: example_id: generic_url: http://www.genedb.orgurl_syntax: http://www.genedb.org/genedb/Search?organism=leish&amp;name=$acc_nourl_example: 
-abbreviation: genedb_pfalciparumdatabase: Gene DB, Plasmodiumobject: example_id: generic_url: http://www.genedb.orgurl_syntax: http://www.genedb.org/genedb/Search?organism=malaria&amp;name=$acc_nourl_example: 
-abbreviation: genedb_spombedatabase: Gene DBobject: example_id: generic_url: http://www.genedb.orgurl_syntax: http://www.genedb.org/genedb/Search?organism=pombe&amp;name=$acc_nourl_example: 
-abbreviation: genedb_tbruceidatabase: Gene DB, Trypaonsoma
-object: example_id: generic_url: http://www.genedb.orgurl_syntax: http://www.genedb.org/genedb/Search?organism=tryp&amp;name=$acc_nourl_example: 
+
+abbreviation: genedb_lmajor
+database: Gene DB, Leishmania
+object: 
+example_id: 
+generic_url: http://www.genedb.org
+url_syntax: http://www.genedb.org/genedb/Search?organism=leish&amp;name=$acc_no
+url_example: 
+
+
+abbreviation: genedb_pfalciparum
+database: Gene DB, Plasmodium
+object: 
+example_id: 
+generic_url: http://www.genedb.org
+url_syntax: http://www.genedb.org/genedb/Search?organism=malaria&amp;name=$acc_no
+url_example: 
+
+
+abbreviation: genedb_spombe
+database: Gene DB
+object: 
+example_id: 
+generic_url: http://www.genedb.org
+url_syntax: http://www.genedb.org/genedb/Search?organism=pombe&amp;name=$acc_no
+url_example: 
+
+
+abbreviation: genedb_tbrucei
+database: Gene DB, Trypaonsoma
+object: 
+example_id: 
+generic_url: http://www.genedb.org
+url_syntax: http://www.genedb.org/genedb/Search?organism=tryp&amp;name=$acc_no
+url_example: 
+
+
 abbreviation: GO
 database: Gene Ontology Database
 object: Gene Ontology term identifier
@@ -720,6 +785,14 @@ generic_url: http://www.ebi.ac.uk/swissprot/
 generic_url: http://ca.expasy.org/sprot/
 url_syntax: http://srs.ebi.ac.uk/srs6bin/cgi-bin/wgetz?-e+[SWALL-acc:$acc_no]
 url_example: http://srs.ebi.ac.uk/srs6bin/cgi-bin/wgetz?-e+[SWALL-acc:Q00177]
+
+abbreviation: TreeGenes
+database: Forest Tree Genome Database
+object: Anything with a TreeGenes ID Number
+example_id: MaizeGDB:881225
+generic_url: http://dendrome.ucdavis.edu/treegenes/
+url_syntax:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=no
+url_example:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=254
 
 abbreviation: UM-BBD
 database: The University of Minnesota Biocatalysis/Biodegradation Database.
