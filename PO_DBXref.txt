@@ -789,9 +789,9 @@ url_example: http://srs.ebi.ac.uk/srs6bin/cgi-bin/wgetz?-e+[SWALL-acc:Q00177]
 abbreviation: TreeGenes
 database: Forest Tree Genome Database
 object: Anything with a TreeGenes ID Number
-example_id: MaizeGDB:881225
+example_id: TreeGenes:254
 generic_url: http://dendrome.ucdavis.edu/treegenes/
-url_syntax:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=no
+url_syntax:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?$acc_no
 url_example:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=254
 
 abbreviation: UM-BBD
