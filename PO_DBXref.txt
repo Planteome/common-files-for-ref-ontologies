@@ -267,14 +267,6 @@ generic_url: http://www.gramene.org/
 url_syntax: http://www.gramene.org/db/literature/pub_search?ref_id=$acc_no
 url_example: http://www.gramene.org/perl/pub_search?ref_id=659
 
-abbreviation: PlantSystematics_image_archive
-database: PlantSystematics.org
-object: image id
-example: PlantSystematics_image_archivee:37658
-generic_url: http://plantsystematics.org
-url_syntax: http://www.plantsystematics.org/imagebyid_$acc_no.html
-url_example: http://www.plantsystematics.org/imagebyid_37658.html
-
 abbreviation: IND
 database: AGRICOLA
 object: call number
@@ -302,10 +294,19 @@ abbreviation: ISBN
 database: International Standard Book Number
 object: book identifier
 example: ISBN:0471738433
-http://openisbn.com/search.php?q=0471738433&isbn=1/
 generic_url: http://openisbn.com
 url_syntax: http://openisbn.com/search.php?q=$acc_no&isbn=1/
 url_example: http://openisbn.com/search.php?q=0471738433&isbn=1/
+
+abbreviation: ISRR
+database: International Society for Root Research
+object: reference identifier
+example: ISRR:Richard Zobel
+http://openisbn.com/isbn/0471738433/
+generic_url: http://www.rootresearch.org/
+url_syntax: http://wiki.plantontology.org/index.php/ISRR_references
+url_example: http://wiki.plantontology.org/index.php/ISRR_references
+
 
 abbreviation: Jaiswal_Lab
 database: Jaiswal_Lab
@@ -497,6 +498,14 @@ generic_url: http://www-nbrf.georgetown.edu/pir/
 url_syntax: http://pir.georgetown.edu/cgi-bin/pirwww/nbrfget?uid=
 url_example: http://pir.georgetown.edu/cgi-bin/pirwww/nbrfget?uid=I49499
 !not in use
+
+abbreviation: PlantSystematics_image_archive
+database: PlantSystematics.org
+object: image id
+example: PlantSystematics_image_archivee:37658
+generic_url: http://plantsystematics.org
+url_syntax: http://www.plantsystematics.org/imagebyid_$acc_no.html
+url_example: http://www.plantsystematics.org/imagebyid_37658.html
 
 abbreviation: PMID
 database: PubMed
