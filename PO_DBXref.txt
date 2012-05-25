@@ -302,11 +302,9 @@ abbreviation: ISRR
 database: International Society for Root Research
 object: reference identifier
 example: ISRR:Richard Zobel
-http://openisbn.com/isbn/0471738433/
 generic_url: http://www.rootresearch.org/
 url_syntax: http://wiki.plantontology.org/index.php/ISRR_references
 url_example: http://wiki.plantontology.org/index.php/ISRR_references
-
 
 abbreviation: Jaiswal_Lab
 database: Jaiswal_Lab
