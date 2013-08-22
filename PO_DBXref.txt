@@ -1,5 +1,5 @@
 !version: $Revision: 1.1.1.1 $
-!date: $Date: 03/27/2012 09:50:00 $
+!date: $Date: 08/22/2013 $
 !Title:PO_DBxref.txt
 !Plant Ontology Consortium
 !www.plantontology.org
@@ -9,6 +9,7 @@
 !Syntax for database cross-references either within nodes in an ontology or within other PO documents, e.g. PO.defs, will be standardized and, as far as possible, we use the abbreviations used by the NCBI. See: http://www.ncbi.nlm.nih.gov/collab/db_xref.html. The syntax would then be: Database_Abbreviation:identifier (as adopted by GO). 
 !This file has been updated to reflect the perl file that includes the current abbreviations being used on AmiGO by the Plant Ontology. Stanzas for abbreviations that are no longer in use are still included, but are followed by a comment to that effect and moved to the end of the file.
 !unknown fields have been left blank.
+!additional comments are included for clarity
 
 abbreviation: AgBase
 database: AgBase
@@ -18,13 +19,27 @@ generic_url: http://agbase.msstate.edu/index.html
 url_syntax: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&gb_acc=$acc_no
 url_example: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=all&database=UniProtKB/TrEMBL&uid=Q8VWP8_GOSHI&gb_acc=Q8VWP8 
 
-abbreviation: CDG
-database: Candida Genomome Database
+abbreviation: APweb
+database: Angiosperm Phylogeny Website
+object: definitions for anatomy terms
+example_id: APweb:Glossary
+generic_url: http://www.mobot.org/mobot/research/apweb/
+url_syntax: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
+url_example: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
+!Looks like there are only references to the generic_url: http://www.mobot.org/mobot/research/apweb/
+
+abbreviation: CO_125
+database: Crop Ontology CGIAR Musa Anatomy
 object: 
-example_id: 
-generic_url: http://www.candidagenome.org
-url_syntax: http://www.candidagenome.org/cgi-bin/locus.pl?locus=$acc_no
+example_id:  CO_125:0000002
+generic_url:  http://www.cropontology.org/ontology/CO_125/Musa Anatomy
+url_syntax:"http://www.cropontology.org/terms/CO_125:$acc_no"
+url_syntax: 
 url_example: 
+!about 29 of these, mostly narrow synonyms, so the dbxrefs do not show up in browser, but are in the OBO file.
+
+"cosmoss"=>"https://www.cosmoss.org/annotation/genonaut?accession=$acc_no&version=V1.2"
+!from namemunger file
 
 abbreviation: cosmoss_PpV1.2
 database: plantco.de|cosmoss.org
@@ -34,14 +49,8 @@ generic_url: https://www.cosmoss.org/annotation/genonaut
 url_syntax: https://www.cosmoss.org/annotation/genonaut?accession=ACCESSION&version=V1.2
 url_example: https://www.cosmoss.org/annotation/genonaut?accession=Pp1s53_22V2.1&version=V1.2 
 
-abbreviation: CO_125
-database: Crop Ontology CGIAR Musa
-object: 
-example_id:  CO_125:0000002
-generic_url: 
-url_syntax:"http://www.cropontology.org/terms/CO_125:$acc_no"
-url_syntax: 
-url_example: 
+"plantco.de|cosmoss.org"=>"https://www.cosmoss.org/annotation/genonaut?accession=$acc_no&version=V1.2"
+!from namemunger file
 
 abbreviation: cribi_vitis
 database: 
@@ -49,58 +58,7 @@ example_id:
 generic_url: http://genomes.cribi.unipd.it
 url_syntax: http://genomes.cribi.unipd.it/cgi-bin/pqs2/report.pl?gene_name=$acc_no&release=v1
 url_example: 
-
-abbreviation: DDB
-database: Dictybase
-object: 
-example_id: 
-generic_url: http://dictybase.org
-url_syntax: http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=$acc_no
-url_syntax: http://dictybase.org/db/cgi-bin/gene_page.pl?dictybaseid=$acc_no
-url_example: 
-
-abbreviation: dros_cdna
-database: 
-object: 
-example_id: 
-generic_url: http://weasel.lbl.gov
-url_syntax: http://weasel.lbl.gov/cgi-bin/EST/community_query/ctgReport.pl?db=estlabtrack&amp;id_type=0&amp;id_value=$acc_no
-url_example: 
-!generic link not working
-
-abbreviation: EC
-database: The Enzyme Commission.
-example: EC:1.1.1.1
-generic_url: http://ca.expasy.org/
-url_syntax: http://ca.expasy.org/cgi-bin/nicezyme.pl?$acc_no
-url_example: 
-
-abbreviation: EMBL
-database: EMBL-EBI International Nucleotide Sequence Data Library/DDBJ/GenBank.
-object: Sequence accession number
-synonym: GB
-synonym: DDBJ
-example: EMBL:AA816246
-generic_url: http://www.ebi.ac.uk/embl/
-url_syntax: http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&amp;Submit=Go&amp;id=$acc_no
-url_example: http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&amp;Submit=Go&amp;id=AA816246
-
-abbreviation: ENSEMBL
-database: Ensembl genome database
-object: 
-example_id: 
-generic_url: http://www.ensembl.org
-url_syntax: http://www.ensembl.org/perl/protview?peptide=$acc_no
-url_example: 
-
-
-abbreviation: FB
-database: Flybase
-object: 
-example_id: 
-generic_url: http://flybase.bio.indiana.edu
-url_syntax: http://flybase.bio.indiana.edu/reports/$acc_no.html
-url_example: 
+!in association file
 
 abbreviation: GenBank
 database: NCBI GenBank
@@ -109,38 +67,7 @@ example_id:
 generic_url: http://www.ncbi.nlm.nih.gov
 url_syntax: http://www.ncbi.nlm.nih.gov/nucest/$acc_no",
 url_example: 
-
-abbreviation: genedb_lmajor
-database: Gene DB, Leishmania
-object: 
-example_id: 
-generic_url: http://www.genedb.org
-url_syntax: http://www.genedb.org/genedb/Search?organism=leish&amp;name=$acc_no
-url_example: 
-
-abbreviation: genedb_pfalciparum
-database: Gene DB, Plasmodium
-object: 
-example_id: 
-generic_url: http://www.genedb.org
-url_syntax: http://www.genedb.org/genedb/Search?organism=malaria&amp;name=$acc_no
-url_example: 
-
-abbreviation: genedb_spombe
-database: Gene DB
-object: 
-example_id: 
-generic_url: http://www.genedb.org
-url_syntax: http://www.genedb.org/genedb/Search?organism=pombe&amp;name=$acc_no
-url_example: 
-
-abbreviation: genedb_tbrucei
-database: Gene DB, Trypaonsoma
-object: 
-example_id: 
-generic_url: http://www.genedb.org
-url_syntax: http://www.genedb.org/genedb/Search?organism=tryp&amp;name=$acc_no
-url_example: 
+!in association file?
 
 abbreviation: GO
 database: Gene Ontology Database
@@ -160,7 +87,7 @@ url_syntax: http://www.gramene.org/db/protein_search?acc=$acc_no
 url_syntax: http://www.gramene.org/db/pub_search?ref_id=$acc_no
 url_syntax: http://www.gramene.org/perl/protein_search?acc=$acc_no
 url_example: http://www.gramene.org/db/protein/protein_search?acc=P93436
-
+!in association file
 
 abbreviation: GR_MUT
 database: Gramene: A Comparative Mapping Resource for Grains
@@ -169,6 +96,7 @@ example_id: GR_MUT:GR:0060198
 generic_url: http://www.gramene.org/
 url_syntax: http://www.gramene.org/db/genes/search_gene?acc=$acc_no
 url_example: http://www.gramene.org/db/genes/search_gene?acc=GR:0060198
+!in association file?
 
 
 abbreviation: GR_PROTEIN
@@ -178,6 +106,8 @@ example:
 generic_url: http://www.gramene.org/
 url_syntax: http://www.gramene.org/db/protein/protein_search?acc=$acc_no
 url_example:
+!in association file
+
 
 abbreviation: GR_QTL
 database: Gramene: A Comparative Mapping Resource for Grains
@@ -186,6 +116,8 @@ example: GR_QTL:CQA11
 generic_url: http://www.gramene.org/
 url_syntax: http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id=$acc_no
 url_example: http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id=CQA11
+!in association file
+
 
 abbreviation: GR_REF
 database: Gramene: A Comparative Mapping Resource for Grains
@@ -194,23 +126,8 @@ example: GR_REF:659
 generic_url: http://www.gramene.org/
 url_syntax: http://www.gramene.org/db/literature/pub_search?ref_id=$acc_no
 url_example: http://www.gramene.org/perl/pub_search?ref_id=659
+!in association file?
 
-abbreviation: GRO
-database: Gramene: A Comparative Mapping Resource for Grains
-object: growth stage
-example: 
-generic_url: 
-url_syntax: http://www.gramene.org/db/ontology/search_term?id=GRO:$acc_no
-url_example: 
-!has been replaced by the PO
-
-abbreviation: InterPro
-database: The InterPro database of protein domains and motifs.
-object: 
-synonym: INTERPRO
-example: 
-generic_url: http://www.ebi.ac.uk/interpro/
-url_syntax:http://www.ebi.ac.uk/interpro/IEntry?ac=$acc_no
 
 
 abbreviation: ISBN
@@ -255,7 +172,7 @@ url_syntax: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=$acc_no
 url_example: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=881225 
 
 
-abbreviation: MACSC_GENETIC_STOCKS
+abbreviation: MGCSC_GENETIC_STOCKS
 database: Maize Genetics and Genomics Database
 object: 
 example:
@@ -269,20 +186,6 @@ example:
 generic_url: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=$acc_no
 url_syntax: 
 
-abbreviation: METACYC
-database: Metacyc Encyclopedia of Metabolic Pathways
-object: 
-example:
-generic_url: http://metacyc.org
-url_syntax:http://biocyc.org/META/substring-search?type=NIL&amp;object=$acc_no
-        
-abbreviation: MGI
-database: 
-object: 
-example:
-generic_url: http://www.informatics.jax.org
-url_syntax:http://www.informatics.jax.org/searches/accession_report.cgi?id=$acc_no
-
 abbreviation: NASC
 database: Nottingham Arabidopsis Stock Centre Seeds Database
 object: 
@@ -290,16 +193,6 @@ example:
 generic_url: http://arabidopsis.info
 url_syntax: http://arabidopsis.info/StockInfo?NASC_id=$acc_no
 example_url:
-
-
-abbreviation: NCBI_gi
-database: NCBI databases.
-object: Identifier.
-example: NCBI_gi:10727410
-generic_url: http://www.ncbi.nlm.nih.gov/
-url_syntax: http://www.ncbi.nlm.nih.gov/nuccore/$acc_no
-url_example: http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=nucleotide&list_uids=10727410&dopt=GenBank
-
 
 
 abbreviation: OBO_SF_PO
@@ -310,7 +203,6 @@ generic_url: http://sourceforge.net/tracker/?func=browse&group_id=76834&atid=835
 url_syntax: https://sourceforge.net/tracker/index.php?func=detail&aid=$acc_no&group_id=76834&atid=835555
 url_example: https://sourceforge.net/tracker/index.php?func=detail&aid=3184921&group_id=76834&atid=835555
 
-
 abbreviation: OBO_SF2_PO
 database: Source Forge OBO Plant Ontology (PO) term request tracker
 object: Plant Ontology term request
@@ -318,14 +210,6 @@ example_id: OBO_SF2_PO:500
 generic_url: 
 url_syntax: http://sourceforge.net/p/obo/plant-ontology-po-term-requests/$acc_no
 url_example: 
-
-abbreviation: Pfam
-database: Pfam: Protein families database of alignments and HMMs.
-object: Accession number.
-example: Pfam:PF00046
-generic_url: http://www.sanger.ac.uk/Software/Pfam/
-url_syntax:  http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?$acc_no
-url_example: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?PF00046
 
 abbreviation: PlantSystematics_image_archive
 database: PlantSystematics.org
@@ -351,8 +235,6 @@ generic_url:http://www.plantontology.org
 url_syntax:
 url_example:
 
-#not in list
- 
 abbreviation: POC
 database: Plant Ontology Consortium
 object: curator
@@ -378,39 +260,9 @@ example: PUBMED:4208797
 generic_url: http://www.ncbi.nlm.nih.gov/PubMed/
 url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=$acc_no
 url_example: 
+!In use?
 
-
-
-abbreviation: REACTOME
-database: Reactome pathway database
-object: 
-example: 
-generic_url: http://www.reactome.org
-url_syntax: http://www.reactome.org/cgi-bin/eventbrowser?DB=gk_current&amp;ID=$acc_no
-
-
-
-abbreviation: RAD
-database: RGD database
-object: 
-example: 
-generic_url: http://rgd.mcw.edu
-url_syntax: http://rgd.mcw.edu/tools/references/references_view.cgi?id=$acc_no
-
-abbreviation: SGD
-database: Saccharomyces Genome Database
-object: 
-example: 
-generic_url: http://db.yeastgenome.org
-url_syntax: http://db.yeastgenome.org/cgi-bin/locus.pl?sgdid=$acc_no
-url_syntax: http://db.yeastgenome.org/cgi-bin/SGD/reference/reference.pl?refNo=$acc_no
-
-abbreviation: SGD_REF
-database: Saccharomyces Genome Database
-object: reference
-example: 
-generic_url: http://db.yeastgenome.org
-url_syntax: http://db.yeastgenome.org/cgi-bin/reference/reference.pl?dbid=$acc_no
+"rap-db"=>"http://rapdb.dna.affrc.go.jp/viewer/gbrowse_details/irgsp1?name=$acc_no",
 
 abbreviation: SGN_gene
 database: Sol Genomics Network
@@ -436,6 +288,69 @@ example_id: SGN_ref:800
 generic url: http://solgenomics.net/
 url_syntax: http://www.sgn.cornell.edu/chado/publication.pl?pub_id=$acc_no
 url_example: http://www.sgn.cornell.edu/chado/publication.pl?pub_id=800
+
+
+
+"soybase_qtl"=>"http://soybase.org/sbt/search/search_results.php?category=QTLName&search_term=$acc_no",
+!new
+
+abbreviation: TAIR
+database: The Arabidopsis Information Resource.
+object: Accession number.
+example: TAIR:gene:2062713
+generic_url: http://www.arabidopsis.org/
+url_syntax: http://arabidopsis.org/servlets/TairObject?accession=$acc_no
+url_example: http://www.arabidopsis.org/servlets/TairObject?accession=gene:2062713
+
+abbreviation: taxon
+database: NCBI Taxman.
+object: Identifier.
+example: taxon:7227
+generic_url: http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/
+url_syntax:
+!not in use
+
+abbreviation: TreeGenes
+database: Forest Tree Genome Database
+object: Anything with a TreeGenes ID Number
+example_id: TreeGenes:254
+generic_url: http://dendrome.ucdavis.edu/treegenes/
+url_syntax:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=$acc_no
+url_example:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=254
+
+
+#not in use:
+
+abbreviation: REACTOME
+database: Reactome pathway database
+object: 
+example: 
+generic_url: http://www.reactome.org
+url_syntax: http://www.reactome.org/cgi-bin/eventbrowser?DB=gk_current&amp;ID=$acc_no
+
+
+abbreviation: RAD
+database: RGD database
+object: 
+example: 
+generic_url: http://rgd.mcw.edu
+url_syntax: http://rgd.mcw.edu/tools/references/references_view.cgi?id=$acc_no
+
+abbreviation: SGD
+database: Saccharomyces Genome Database
+object: 
+example: 
+generic_url: http://db.yeastgenome.org
+url_syntax: http://db.yeastgenome.org/cgi-bin/locus.pl?sgdid=$acc_no
+url_syntax: http://db.yeastgenome.org/cgi-bin/SGD/reference/reference.pl?refNo=$acc_no
+
+abbreviation: SGD_REF
+database: Saccharomyces Genome Database
+object: reference
+example: 
+generic_url: http://db.yeastgenome.org
+url_syntax: http://db.yeastgenome.org/cgi-bin/reference/reference.pl?dbid=$acc_no
+
 
 abbreviation: SMD
 database: Stanford Microarray Database
@@ -489,21 +404,6 @@ url_syntax: http://www.expasy.ch/cgi-bin/sprot-search-ac?
 url_example: http://www.expasy.ch/cgi-bin/sprot-search-ac?P45867
 !not in use
 
-abbreviation: TAIR
-database: The Arabidopsis Information Resource.
-object: Accession number.
-example: TAIR:gene:2062713
-generic_url: http://www.arabidopsis.org/
-url_syntax: http://arabidopsis.org/servlets/TairObject?accession=$acc_no
-url_example: http://www.arabidopsis.org/servlets/TairObject?accession=gene:2062713
-
-abbreviation: taxon
-database: NCBI Taxman.
-object: Identifier.
-example: taxon:7227
-generic_url: http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/
-url_syntax:
-!not in use
 
 abbreviation: TC
 database: The Transport Protein Database.
@@ -606,13 +506,7 @@ generic_url: http://ca.expasy.org/sprot/
 url_syntax: http://srs.ebi.ac.uk/srs6bin/cgi-bin/wgetz?-e+[SWALL-acc:$acc_no]
 url_example: http://srs.ebi.ac.uk/srs6bin/cgi-bin/wgetz?-e+[SWALL-acc:Q00177]
 
-abbreviation: TreeGenes
-database: Forest Tree Genome Database
-object: Anything with a TreeGenes ID Number
-example_id: TreeGenes:254
-generic_url: http://dendrome.ucdavis.edu/treegenes/
-url_syntax:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=$acc_no
-url_example:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=254
+
 
 abbreviation: UM-BBD
 database: The University of Minnesota Biocatalysis/Biodegradation Database.
@@ -688,20 +582,79 @@ example_url: http://www.tigr.org/tigr-scripts/euk_manatee/shared/ORF_infopage.cg
 example_url: http://arabidopsis.org/servlets/TairObject?type=locus&name=At2g17950
 !not in use
 
-abbreviation: AP
-database: Angiosperm Phylogeny Website
-object: definitions for anatomy terms
-example_id: APweb:Glossary
-generic_url: http://www.mobot.org/mobot/research/apweb/
-url_syntax: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
-url_example: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
-!not in use
 
 abbreviation: bib
 database: AGRICOLA
 object: call number
 example: MARC TAG 016 or bib=0000-05160
 generic_url: http://www.nal.usda.gov/ag98/
+!not in use
+
+abbreviation: CDG
+database: Candida Genomome Database
+object: 
+example_id: 
+generic_url: http://www.candidagenome.org
+url_syntax: http://www.candidagenome.org/cgi-bin/locus.pl?locus=$acc_no
+url_example: 
+!not in use
+
+abbreviation: DDB
+database: Dictybase
+object: 
+example_id: 
+generic_url: http://dictybase.org
+url_syntax: http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=$acc_no
+url_syntax: http://dictybase.org/db/cgi-bin/gene_page.pl?dictybaseid=$acc_no
+url_example: 
+!not in use
+
+abbreviation: dros_cdna
+database: 
+object: 
+example_id: 
+generic_url: http://weasel.lbl.gov
+url_syntax: http://weasel.lbl.gov/cgi-bin/EST/community_query/ctgReport.pl?db=estlabtrack&amp;id_type=0&amp;id_value=$acc_no
+url_example: 
+!generic link not working
+!not in use
+
+abbreviation: EC
+database: The Enzyme Commission.
+example: EC:1.1.1.1
+generic_url: http://ca.expasy.org/
+url_syntax: http://ca.expasy.org/cgi-bin/nicezyme.pl?$acc_no
+url_example: 
+!not in use
+
+abbreviation: EMBL
+database: EMBL-EBI International Nucleotide Sequence Data Library/DDBJ/GenBank.
+object: Sequence accession number
+synonym: GB
+synonym: DDBJ
+example: EMBL:AA816246
+generic_url: http://www.ebi.ac.uk/embl/
+url_syntax: http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&amp;Submit=Go&amp;id=$acc_no
+url_example: http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&amp;Submit=Go&amp;id=AA816246
+!not in use
+
+abbreviation: ENSEMBL
+database: Ensembl genome database
+object: 
+example_id: 
+generic_url: http://www.ensembl.org
+url_syntax: http://www.ensembl.org/perl/protview?peptide=$acc_no
+url_example: 
+!not in use
+
+
+abbreviation: FB
+database: Flybase
+object: 
+example_id: 
+generic_url: http://flybase.bio.indiana.edu
+url_syntax: http://flybase.bio.indiana.edu/reports/$acc_no.html
+url_example: 
 !not in use
 
 abbreviation: ENZYME
@@ -747,6 +700,16 @@ database: Gene Ontology Annotation at EBI annotations from keyword mapping.
 object: Reference (points to web page).
 url_example: http://www.geneontology.org/goa.spkw.html
 !not in use
+
+abbreviation: GRO
+database: Gramene: A Comparative Mapping Resource for Grains
+object: growth stage
+example: 
+generic_url: 
+url_syntax: http://www.gramene.org/db/ontology/search_term?id=GRO:$acc_no
+url_example: 
+!not in use- has been replaced by the PO
+
 
 abbreviation: IND
 database: AGRICOLA
@@ -797,6 +760,53 @@ generic_url: http://www.ncbi.nlm.nih.gov/
 url_syntax:
 url_example: http://www.ncbi.nlm.nih.gov:80/LocusLink/LocRpt.cgi?l=3195
 !not in use
+
+abbreviation: genedb_lmajor
+database: Gene DB, Leishmania
+object: 
+example_id: 
+generic_url: http://www.genedb.org
+url_syntax: http://www.genedb.org/genedb/Search?organism=leish&amp;name=$acc_no
+url_example: 
+
+abbreviation: genedb_pfalciparum
+database: Gene DB, Plasmodium
+object: 
+example_id: 
+generic_url: http://www.genedb.org
+url_syntax: http://www.genedb.org/genedb/Search?organism=malaria&amp;name=$acc_no
+url_example: 
+
+abbreviation: genedb_spombe
+database: Gene DB
+object: 
+example_id: 
+generic_url: http://www.genedb.org
+url_syntax: http://www.genedb.org/genedb/Search?organism=pombe&amp;name=$acc_no
+url_example: 
+
+abbreviation: genedb_tbrucei
+database: Gene DB, Trypaonsoma
+object: 
+example_id: 
+generic_url: http://www.genedb.org
+url_syntax: http://www.genedb.org/genedb/Search?organism=tryp&amp;name=$acc_no
+url_example: 
+
+abbreviation: METACYC
+database: Metacyc Encyclopedia of Metabolic Pathways
+object: 
+example:
+generic_url: http://metacyc.org
+url_syntax:http://biocyc.org/META/substring-search?type=NIL&amp;object=$acc_no
+        
+abbreviation: MGI
+database: 
+object: 
+example:
+generic_url: http://www.informatics.jax.org
+url_syntax:http://www.informatics.jax.org/searches/accession_report.cgi?id=$acc_no
+
 
 abbreviation: MaizeGDB_REF
 database: Maize Genetics and Genomics Database
@@ -904,3 +914,30 @@ example: RESID:AA0062
 generic_url: ftp://ftp.ncifcrf.gov/pub/users/residues/
 url_syntax:
 !not in use
+
+abbreviation: InterPro
+database: The InterPro database of protein domains and motifs.
+object: 
+synonym: INTERPRO
+example: 
+generic_url: http://www.ebi.ac.uk/interpro/
+url_syntax:http://www.ebi.ac.uk/interpro/IEntry?ac=$acc_no
+!in association file?
+
+abbreviation: NCBI_gi
+database: NCBI databases.
+object: Identifier.
+example: NCBI_gi:10727410
+generic_url: http://www.ncbi.nlm.nih.gov/
+url_syntax: http://www.ncbi.nlm.nih.gov/nuccore/$acc_no
+url_example: http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=nucleotide&list_uids=10727410&dopt=GenBank
+!not in use?
+
+abbreviation: Pfam
+database: Pfam: Protein families database of alignments and HMMs.
+object: Accession number.
+example: Pfam:PF00046
+generic_url: http://www.sanger.ac.uk/Software/Pfam/
+url_syntax:  http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?$acc_no
+url_example: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?PF00046
+!not in use?
