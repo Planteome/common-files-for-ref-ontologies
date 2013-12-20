@@ -171,6 +171,14 @@ generic_url: http://www.maizegdb.org/
 url_syntax: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=$acc_no
 url_example: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=881225 
 
+abbreviation: MaizeGDB_QTL
+database: Maize Genetics and Genomics Database
+object: MaizeGDB trait records
+example_id: MaizeGDB_QTL:78112
+generic_url: http://www.maizegdb.org/
+url_syntax: http://www.maizegdb.org/cgi-bin/displaytraitrecord.cgi?id=$acc_no
+url_example: http://www.maizegdb.org/cgi-bin/displaytraitrecord.cgi?id=78112
+
 
 abbreviation: MGCSC_GENETIC_STOCKS
 database: Maize Genetics and Genomics Database
