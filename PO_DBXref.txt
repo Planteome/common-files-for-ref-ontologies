@@ -1,10 +1,10 @@
 !version: $Revision: 1.1.1.1 $
-!date: $Date: 08/22/2013 $
+!date: $Date: 04/4/2013 $
 !Title:PO_DBxref.txt
 !Plant Ontology Consortium
 !www.plantontology.org
 !created by: Pankaj Jaiswal
-!modified by: Laurel_Cooper
+!modified by: Justin Elser
 !Note that url's are not necessarily stable entities and that some databases may have many other access routes or mirror sites.
 !Syntax for database cross-references either within nodes in an ontology or within other PO documents, e.g. PO.defs, will be standardized and, as far as possible, we use the abbreviations used by the NCBI. See: http://www.ncbi.nlm.nih.gov/collab/db_xref.html. The syntax would then be: Database_Abbreviation:identifier (as adopted by GO). 
 !This file has been updated to reflect the perl file that includes the current abbreviations being used on AmiGO by the Plant Ontology. Stanzas for abbreviations that are no longer in use are still included, but are followed by a comment to that effect and moved to the end of the file.
@@ -27,6 +27,14 @@ generic_url: http://www.mobot.org/mobot/research/apweb/
 url_syntax: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
 url_example: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
 !Looks like there are only references to the generic_url: http://www.mobot.org/mobot/research/apweb/
+
+abbreviation: APSNET
+database: APSNET Common Names of Plant Diseases
+object: Reference identifier
+example_id: APSNET:AfricanDaisy
+generic url: http://www.apsnet.org/publications/commonnames/Pages
+url_syntax: http://www.apsnet.org/publications/commonnames/Pages/$acc_no.aspx
+url_example: http://www.apsnet.org/publications/commonnames/Pages/AfricanDaisy.aspx
 
 abbreviation: CO_125
 database: Crop Ontology CGIAR Musa Anatomy
@@ -269,6 +277,14 @@ generic_url: http://www.ncbi.nlm.nih.gov/PubMed/
 url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=$acc_no
 url_example: 
 !In use?
+
+abbreviation: RiceSES
+database: Rice Knowledge Bank
+object: Reference identifier
+example_id: RiceSES:bakanae-diseases-bak
+generic url: http://www.knowledgebank.irri.org/extension/crop-damage-diseases/
+url_syntax: http://www.knowledgebank.irri.org/extension/crop-damage-diseases/$acc_no.html
+url_example: http://www.knowledgebank.irri.org/extension/crop-damage-diseases/bakanae-diseases-bak.html
 
 "rap-db"=>"http://rapdb.dna.affrc.go.jp/viewer/gbrowse_details/irgsp1?name=$acc_no",
 
