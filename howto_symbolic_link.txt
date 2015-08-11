@@ -1,4 +1,4 @@
-Do the following ont he command line:
+Do the following on the command line:
 
 Step1: navigate to the location on your machine where OBO-Edit keeps it’s “standard.dict” file
 
