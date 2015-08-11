@@ -1,0 +1,10 @@
+Step1: navigate to the location on your machine where OBO-Edit keeps it’s “standard.dict” file
+
+Step2: delete or rename it something different
+
+Step3: Type the following in: “ln -s /path/to/git/repo/common-files-for-ref-ontologies/standard.dict standard.dict”
+
+(replace with the correct path to your local git repo)
+
+Now when you add words to the standard dictionary in OBO-edit2, it will automatically make those changes to the standard.dict stored in your git repo.  This means you need to remember to pull the common-files-for-ref-ontologies repo before starting to edit in OBO-Edit, and you need to add/commit/push that same ontology when you are finished.
+
