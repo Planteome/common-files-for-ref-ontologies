@@ -1,0 +1,32 @@
+A list of usefull repositories.
+
+Myrepos- joeyh
+
+clone URL:  https://github.com/joeyh/myrepos.git 
+ 
+This is a repo with a script to allow for tagging of repos (git/svn/ you name it) that use version control, and subsequent updating of all tagged repos with one command from the terminal.
+note: the "mr update" command can only update repos housed under a single directory.
+
+The readme in the repo is all you need to read to use it but I will give a brief outline here:
+
+1. Download the repo
+2. Move/copy the 'mr' file into your executable $PATH  (Mac is usually this: /usr/local/git/bin
+/sw/bin/
+/usr/local/bin
+/usr/local/
+/usr/local/sbin
+/usr/local/mysql/bin
+/usr/local/bin
+/usr/bin
+/bin
+/usr/sbin
+/sbin
+/usr/local/bin/
+
+3. Navigate (using terminal) to the repos you would like to tag (for git repos, this will be the directory that contains the .git hidden file. (use "ls -a" to verify)
+
+4. enter the command "mr register"  This tags the repo for mass updates
+
+5. repeat steps 3. and 4. for all repos you would like to update en masse.
+
+6. to update all repos that have been tagged, simply navigate to the folder containing all of your tagged repos, and type "mr update"  This should give output as to what repos were updated and which were up to date already.
