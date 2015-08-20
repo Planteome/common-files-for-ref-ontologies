@@ -174,10 +174,10 @@ url_example: http://www.jstor.org/stable/3093870
 abbreviation: MaizeGDB
 database: Maize Genetics and Genomics Database
 object: Anything with a MaizeGDB Object ID Number or Gene Model Name
-example_id: MaizeGDB:881225
+example_id: MaizeGDB:12098
 generic_url: http://www.maizegdb.org/
-url_syntax: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=$acc_no
-url_example: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=881225 
+url_syntax: http://maizegdb.org/gene_center/gene/$acc_no
+url_example: http://maizegdb.org/gene_center/gene/12098 
 
 abbreviation: MaizeGDB_QTL
 database: Maize Genetics and Genomics Database
