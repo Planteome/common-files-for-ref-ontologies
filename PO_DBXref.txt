@@ -170,6 +170,13 @@ generic_url: http://www.jstor.org/
 url_syntax: http://www.jstor.org/stable/$acc_no
 url_example: http://www.jstor.org/stable/3093870 
 
+abbreviation: LIS
+database: Legume Information System
+object: Anything with a LIS Object ID Number 
+example_id: LIS:Medtr5g030920
+generic_url: http://legumeinfo.org/
+url_syntax: http://legumeinfo.org/feature/Medicago/truncatula/gene/$acc_no.JCVIMt4.0v1
+url_example: http://legumeinfo.org/feature/Medicago/truncatula/gene/Medtr5g030920.JCVIMt4.0v1 
 
 abbreviation: MaizeGDB
 database: Maize Genetics and Genomics Database
