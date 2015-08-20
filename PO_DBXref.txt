@@ -97,6 +97,14 @@ url_syntax: http://www.gramene.org/perl/protein_search?acc=$acc_no
 url_example: http://www.gramene.org/db/protein/protein_search?acc=P93436
 !in association file
 
+abbreviation: GR_gene
+database: Gramene: A Comparative Mapping Resource for Grains
+object: Anything with a GR_gene Object ID Number
+example_id: GR_MUT:GR:0060198
+generic_url: http://www.gramene.org/
+url_syntax: http://www.gramene.org/db/genes/search_gene?acc=$acc_no
+url_example: http://www.gramene.org/db/genes/search_gene?acc=GR:0060058
+
 abbreviation: GR_MUT
 database: Gramene: A Comparative Mapping Resource for Grains
 object: Mutants
