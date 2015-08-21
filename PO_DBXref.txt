@@ -350,10 +350,10 @@ url_example: http://www.soybase.org/sbt/search/search_results.php?category=QTLNa
 abbreviation: TAIR
 database: The Arabidopsis Information Resource.
 object: Accession number.
-example: TAIR:gene:2062713
+example: TAIR:At5g26820
 generic_url: http://www.arabidopsis.org/
-url_syntax: http://arabidopsis.org/servlets/TairObject?accession=$acc_no
-url_example: http://www.arabidopsis.org/servlets/TairObject?accession=gene:2062713
+url_syntax: https://arabidopsis.org/servlets/TairObject?type=locus&name=$acc_no
+url_example: https://arabidopsis.org/servlets/TairObject?type=locus&name=At5g26820
 
 abbreviation: taxon
 database: NCBI Taxman.
