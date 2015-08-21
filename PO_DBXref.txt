@@ -352,8 +352,8 @@ database: The Arabidopsis Information Resource.
 object: Accession number.
 example: TAIR:At5g26820
 generic_url: http://www.arabidopsis.org/
-url_syntax: https://arabidopsis.org/servlets/TairObject?type=locus&name=$acc_no
-url_example: https://arabidopsis.org/servlets/TairObject?type=locus&name=At5g26820
+url_syntax: http://arabidopsis.org/servlets/TairObject?type=locus&name=$acc_no
+url_example: http://arabidopsis.org/servlets/TairObject?type=locus&name=At5g26820
 
 abbreviation: taxon
 database: NCBI Taxman.
