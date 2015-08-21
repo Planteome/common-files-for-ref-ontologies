@@ -97,6 +97,14 @@ url_syntax: http://www.gramene.org/perl/protein_search?acc=$acc_no
 url_example: http://www.gramene.org/db/protein/protein_search?acc=P93436
 !in association file
 
+abbreviation: GR_gene
+database: Gramene: A Comparative Mapping Resource for Grains
+object: Anything with a GR_gene Object ID Number
+example_id: GR_MUT:GR:0060198
+generic_url: http://www.gramene.org/
+url_syntax: http://www.gramene.org/db/genes/search_gene?acc=$acc_no
+url_example: http://www.gramene.org/db/genes/search_gene?acc=GR:0060058
+
 abbreviation: GR_MUT
 database: Gramene: A Comparative Mapping Resource for Grains
 object: Mutants
@@ -170,14 +178,21 @@ generic_url: http://www.jstor.org/
 url_syntax: http://www.jstor.org/stable/$acc_no
 url_example: http://www.jstor.org/stable/3093870 
 
+abbreviation: LIS
+database: Legume Information System
+object: Anything with a LIS Object ID Number 
+example_id: LIS:Medtr5g030920
+generic_url: http://legumeinfo.org/
+url_syntax: http://legumeinfo.org/feature/Medicago/truncatula/gene/$acc_no.JCVIMt4.0v1
+url_example: http://legumeinfo.org/feature/Medicago/truncatula/gene/Medtr5g030920.JCVIMt4.0v1 
 
 abbreviation: MaizeGDB
 database: Maize Genetics and Genomics Database
 object: Anything with a MaizeGDB Object ID Number or Gene Model Name
-example_id: MaizeGDB:881225
+example_id: MaizeGDB:12098
 generic_url: http://www.maizegdb.org/
-url_syntax: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=$acc_no
-url_example: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=881225 
+url_syntax: http://maizegdb.org/gene_center/gene/$acc_no
+url_example: http://maizegdb.org/gene_center/gene/12098 
 
 abbreviation: MaizeGDB_QTL
 database: Maize Genetics and Genomics Database
@@ -313,6 +328,14 @@ generic url: http://solgenomics.net/
 url_syntax: http://www.sgn.cornell.edu/chado/publication.pl?pub_id=$acc_no
 url_example: http://www.sgn.cornell.edu/chado/publication.pl?pub_id=800
 
+abbreviation: Soy_gene
+database: SoyBase
+object: Anything with a Soy_gene Object ID Number
+example: Glyma18g02210
+generic_url: http://soybase.org/
+url_syntax: http://www.soybase.org/sbt/search/search_results.php?category=FeatureName&search_term=$acc_no
+url_example: http://www.soybase.org/sbt/search/search_results.php?category=FeatureName&search_term=Glyma18g02210
+
 abbreviation: SOY_QTL
 database: SoyBase
 object: QTL Name
@@ -320,7 +343,6 @@ example: Abn+sdlg+1-1
 generic_url: http://soybase.org/
 url_syntax: http://soybase.org/sbt/search/search_results.php?category=QTLName&search_term=$acc_no
 url_example: http://www.soybase.org/sbt/search/search_results.php?category=QTLName&search_term=Abn+sdlg+1-1
-
 
 "soybase_qtl"=>"http://soybase.org/sbt/search/search_results.php?category=QTLName&search_term=$acc_no",
 !new
