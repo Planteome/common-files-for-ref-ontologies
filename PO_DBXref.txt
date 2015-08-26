@@ -346,7 +346,7 @@ url_example: http://www.soybase.org/sbt/search/search_results.php?category=Featu
 abbreviation: SOY_QTL
 database: SoyBase
 object: QTL Name
-example: Seedling, abnormal 1-1
+example: Seedling, abnormal+1-1
 generic_url: http://soybase.org/
 url_syntax: http://soybase.org/sbt/search/search_results.php?category=QTLName&search_term=$acc_no
 url_example: http://www.soybase.org/sbt/search/search_results.php?category=QTLName&search_term=Seedling,+abnormal+1-1
