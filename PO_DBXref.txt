@@ -354,6 +354,14 @@ url_example: http://www.soybase.org/sbt/search/search_results.php?category=QTLNa
 "soybase_qtl"=>"http://soybase.org/sbt/search/search_results.php?category=QTLName&search_term=$acc_no",
 !new
 
+abbreviation: SOY_ref
+database: SoyBase
+object: Soybase reference
+example: SOY ref:SoyBase6597900
+generic_url: http://soybase.org/
+url_syntax: http://www.soybase.org/sbt/search/search_results.php?category=Soybase_ID&search_term=$acc_no
+url_example: http://www.soybase.org/sbt/search/search_results.php?category=Soybase_ID&search_term=SoyBase3142000126
+
 abbreviation: TAIR
 database: The Arabidopsis Information Resource.
 object: Accession number.
