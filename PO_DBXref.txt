@@ -194,6 +194,14 @@ generic_url: http://www.maizegdb.org/
 url_syntax: http://maizegdb.org/gene_center/gene/$acc_no
 url_example: http://maizegdb.org/gene_center/gene/12098 
 
+abbreviation: MaizeGDB_stock
+database: Maize Genetics and Genomics Database
+object: Anything with a MaizeGDB_stock number
+example_id: MaizeGDB_stock:12098
+generic_url: http://www.maizegdb.org/
+url_syntax: http://maizegdb.org/data_center/stock?id=$acc_no
+url_example: http://maizegdb.org/data_center/stock?id=12098 
+
 abbreviation: MaizeGDB_QTL
 database: Maize Genetics and Genomics Database
 object: MaizeGDB trait records
