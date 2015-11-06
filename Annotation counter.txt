@@ -1,0 +1,10 @@
+for i in po_growth_*.assoc plant_ontology_qtl_glycine_soybase.assoc po_ontology_IMP_gene_*.assoc po_temporal_gene_arabidopsis_tair.assoc; do echo $i; cat $i | awk -F "\t" '{if ($9 =="G" ) print $2}' | wc -l; cat $i | awk -F "\t" '{if ($9 =="G" ) print $2}' | sort | uniq | wc -l;  
+
+
+#this is to count the # of unique annotations in the listed files. 
+#Steps:
+#1. Assign the names of the files to a variable
+#2 Print out the name (echo) if annotation line contains G in field 9 (aspect)
+#3 Pipe the gene identifiers (col 2) to sort and uniq, 
+#count lines
+#From elserj
