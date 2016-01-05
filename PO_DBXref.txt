@@ -41,7 +41,7 @@ database: Crop Ontology CGIAR Musa Anatomy
 object: 
 example_id:  CO_125:0000002
 generic_url:  http://www.cropontology.org/ontology/CO_125/Musa Anatomy
-url_syntax:"http://www.cropontology.org/terms/CO_125:$acc_no"
+url_syntax: http://www.cropontology.org/terms/CO_125:$acc_no
 url_syntax: 
 url_example: 
 !about 29 of these, mostly narrow synonyms, so the dbxrefs do not show up in browser, but are in the OBO file.
@@ -215,8 +215,8 @@ abbreviation: MGCSC_GENETIC_STOCKS
 database: Maize Genetics and Genomics Database
 object: 
 example:
-generic_url: http://www.maizegdb.org/cgi-bin/displaystockrecord.cgi?id=$acc_no
-url_syntax:http:
+generic_url: http://www.maizegdb.org
+url_syntax: http://www.maizegdb.org/cgi-bin/displaystockrecord.cgi?id=$acc_no
 
 abbreviation: MACSC_REF
 database: Maize Genetics and Genomics Database
@@ -239,7 +239,7 @@ object: Reference
 example: NCBITaxon:1176514
 generic_url: http://www.ncbi.nlm.nih.gov/Taxonomy/
 url_syntax: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&id=$acc_no
-url_example:http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&id=1176514
+url_example: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&id=1176514
 
 abbreviation: OBO_SF_PO
 database: Source Forge OBO Plant Ontology (PO) term request tracker
@@ -274,10 +274,10 @@ url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=Pu
 url_example: 
 
 abbreviation: PO
-database:Plant Ontology Consortium AmiGO browser
+database: Plant Ontology Consortium AmiGO browser
 object: Plant Ontology term
 example_id: PO:0025034
-generic_url:http://www.plantontology.org
+generic_url: http://www.plantontology.org
 url_syntax:
 url_example:
 
@@ -391,8 +391,8 @@ database: Forest Tree Genome Database
 object: Anything with a TreeGenes ID Number
 example_id: TreeGenes:254
 generic_url: http://dendrome.ucdavis.edu/treegenes/
-url_syntax:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=$acc_no
-url_example:http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=254
+url_syntax: http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=$acc_no
+url_example: http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=254
 
 
 #not in use:
@@ -874,14 +874,14 @@ database: Metacyc Encyclopedia of Metabolic Pathways
 object: 
 example:
 generic_url: http://metacyc.org
-url_syntax:http://biocyc.org/META/substring-search?type=NIL&amp;object=$acc_no
+url_syntax: http://biocyc.org/META/substring-search?type=NIL&amp;object=$acc_no
         
 abbreviation: MGI
 database: 
 object: 
 example:
 generic_url: http://www.informatics.jax.org
-url_syntax:http://www.informatics.jax.org/searches/accession_report.cgi?id=$acc_no
+url_syntax: http://www.informatics.jax.org/searches/accession_report.cgi?id=$acc_no
 
 
 abbreviation: MaizeGDB_REF
@@ -997,7 +997,7 @@ object:
 synonym: INTERPRO
 example: 
 generic_url: http://www.ebi.ac.uk/interpro/
-url_syntax:http://www.ebi.ac.uk/interpro/IEntry?ac=$acc_no
+url_syntax: http://www.ebi.ac.uk/interpro/IEntry?ac=$acc_no
 !in association file?
 
 abbreviation: NCBI_gi
