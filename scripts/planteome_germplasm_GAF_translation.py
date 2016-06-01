@@ -1,6 +1,6 @@
 #OG_datafile.csv must be in the same format as the file contained in this repo
 #Trait_map.csv must also be in the same format as the sample file contained in this repo
-
+#test config:  "/Users/meiera/Documents/Jaiswal/Planteome/IRRI/irri_data_text/test_10line.txt" "/Users/meiera/Documents/Jaiswal/Planteome/IRRI/jeffs_trait_map.txt" "4530" "GRIMS" "/Users/meiera/Documents/Jaiswal/Planteome/IRRI/"
 #########################################################################
 #                       imports
 #########################################################################
@@ -14,6 +14,7 @@ import os
 usage_statement = "usage: python2.7 planteome_germplasm_GAF_translation.py <OG_datafile.csv> <Trait_map.csv> <taxonID> <DatabaseID> <path of output directory>"
 
 #check the number of arguments
+print(sys.argv)
 if len(sys.argv) !=6:
 	print("Error: incorrect number of arguments")
 	print(usage_statement)
@@ -62,7 +63,8 @@ with open(traitmap,'r') as x:
 #                        Get trait names
 #########################################################################
 with open(OG_datafile, 'r') as f:
-    headers = f.readline().strip().split(",")
+    headers = f.readline().strip().split(",")       #for csv
+    #headers = f.readline().strip().split("\t")      #for tsv
 
 traitcolumns = {}     # a dictionary of TO IDs, and their index numbers
 for item in headers:
@@ -116,8 +118,9 @@ def col3(phenotype_object):
         #Name= str(phenotype_object[1]).split('::') #not sure if I will need to convert the name to a string or edit it
         return phenotype_object[1]
     else:
-        print('record for\n', phenotype_object,"\nwill not be included.  It is missing a name")
-        return False
+        #if there is no name, I had it print the database and the accession number instead
+        nameaccession = database +':' + str(phenotype_object[0])
+        return nameaccession
 
 #not required
 def col4():
@@ -167,11 +170,9 @@ def col10(phenotype_object):
         #return the germplasm name (unless there is a germplasm symbol)
         return phenotype_object[1]
     else:
-        print('record for\n', phenotype_object,"\nwill not be included.  It is missing a name")
-        return False
-        #this name is not required, so it won't return anything.  However, in this case, if there isn't a name,
-        #it will error out on col3(), so it doesn't really matter
-
+        #if there is no name, I had it print the database and the accession number instead
+        nameaccession = database +':' + str(phenotype_object[0])
+        return nameaccession
 
 
 #not required
@@ -211,8 +212,10 @@ def col15():
 def col16(phenotype_object,TO_num):
     phenotype_value= phenotype_object[traitcolumns[TO_num]]
     phenotypename = traitdict.keys()[traitdict.values().index(TO_num)].replace(" ","_")
-    return "has_phenotype_score(" + phenotypename + "=" + phenotype_value +")"
-
+    if phenotype_value != "":
+        return "has_phenotype_score(" + phenotypename + "=" + phenotype_value +")"
+    else:
+        return False
 
     #return the variable (if it exists)
     #return the method, if it exists
@@ -230,7 +233,8 @@ def main():
     with open(OG_datafile,'r') as og:
         for accession in og:
             if not accession.startswith("#"):
-                accessionlist = accession.strip().split(',')
+                accessionlist = accession.strip().split(',')        #for csv
+                #accessionlist = accession.strip().split('\t')        #for tsv
                 #print accession
                 #print accessionlist
                 for TO_num in traitcolumns:
