@@ -4,8 +4,12 @@
 #  Justin Elser  (elserj@science.oregonstate.edu)             #
 #		Parses the assoc files for any taxon ids              #
 #		used in planteome assoc files.  Uses that to          #
-#		get all parent ids.  Once the terms with parents are  #
-#		are generated, use the following to create OBO file:  #
+#		get all parent ids.  To get the chebi ids used, use   #
+#		the following command in a directory with all assoc   #
+#		and ontology files to be checked:                     #
+#		grep -R -i chebi ./* | grep -v svn-base | perl -lne '@string = m/chebi:\d+/gi;  foreach my $match (@string){ print $match}' | sort | uniq > chebi_terms_4.lst
+#		Once the terms with parents are generated from this   #
+#		script, use the following to create OBO file:  	      #
 #		./robot extract --input ../temp/chebi.obo --method STAR --term-file ../temp/chebi_terms_with_parents_4.lst --output ../temp/chebi_filtered_5.obo
 #		or similar											  #
 #                                                             #
