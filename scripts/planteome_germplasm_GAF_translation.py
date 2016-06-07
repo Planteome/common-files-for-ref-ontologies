@@ -6,39 +6,67 @@
 #########################################################################
 import time
 
-import sys
-
 import os
 
-
-usage_statement = "usage: python2.7 planteome_germplasm_GAF_translation.py <OG_datafile.csv> <Trait_map.csv> <taxonID> <DatabaseID> <path of output directory>"
-
-#check the number of arguments
-print(sys.argv)
-if len(sys.argv) !=6:
-	print("Error: incorrect number of arguments")
-	print(usage_statement)
-	quit()
-
-OG_datafile = sys.argv[1]
-traitmap = sys.argv[2]
-taxonID = "NCBITaxon:" + str(sys.argv[3])
-database = sys.argv[4]
-#outdir
-if sys.argv[5].endswith('/'):
-	outdir = sys.argv[5]
-else: outdir = sys.argv[5]+'/'
-#check if the outdirectory specified exists, if not, make it.
-if not os.path.exists(sys.argv[5]):
-	os.makedirs(sys.argv[5])
+import argparse
 
 
+parser = argparse.ArgumentParser(description = "Transform original germplasm data in to GAF2 formatted annotation files for display on Plantome.org")
+parser.add_argument("OG_datafile", help = "This is the original data file.  Refer to template for format")
+parser.add_argument("traitmap", help = "this is a file that maps the headers of the OG_datafile to their traitID in the TO")
+parser.add_argument("database", help = "This is the database that holds the germplasm.")
+parser.add_argument("-o","--outdir", help = "The directory you would like the GAF file written to.")
+parser.add_argument("-t","--taxon", help = "The NCBI taxon ID number for the species being annotated (Default is 4530, which is Oryza sativa)")
+parser.add_argument("-e","--evidence", help = "The evidence code associated with this file's annotation")
+parser.add_argument("-c","--currator", help = "The person who did the curration.")
+parser.add_argument("-n","--outfile", help = "Name of the output file")
+
+args = parser.parse_args()
+
+# positional arguments
+OG_datafile = args.OG_datafile
+traitmap = args.traitmap
+database = args.database
+# optional arguments
+
+# output directory
+if args.outdir:
+    if args.outdir.endswith('/'):
+        outdir = args.outdir
+    else: outdir = args.outdir + '/'
+ #check if the outdirectory specified exists, if not, make it.
+    if not os.path.exists(args.outdir):
+        os.makedirs(args.outdir)
+else:
+    outdir = os.getcwd() + '/'
+
+# Taxon argument
+if args.taxon:
+    taxonID = "NCBITaxon:" + args.taxon
+else:
+    taxonID = "NCBITaxon:4530"
+
+# Evidence argument
+if args.evidence:
+    evidencecode = args.evidence
+else:
+    evidencecode = "EXP"
+
+# assigned by:
+if args.currator:
+    assigned_by = args.currator
+else:
+    assigned_by = "austin_meier"
+
+# output filename
+if args.outfile:
+    outfile = args.outfile + ".assoc"
+else:
+    outfile = outdir + database + ".assoc"
 
 
+print "New association file has been created: " + outfile
 
-evidencecode = "EXP"
-outfile = outdir + database + ".assoc"
-assigned_by = "austin_meier"
 
 
 
