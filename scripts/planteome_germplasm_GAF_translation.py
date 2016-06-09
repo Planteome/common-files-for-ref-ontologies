@@ -22,7 +22,7 @@ parser.add_argument("-t","--taxon", help = "The NCBI taxon ID number for the spe
 parser.add_argument("-e","--evidence", help = "The evidence code associated with this file's annotation.  Default is EXP")
 parser.add_argument("-c","--currator", help = "The person who did the curration.  Default is 'austin_meier'")
 parser.add_argument("-n","--outfile", help = "Name of the output file.  Default is '<database>.assoc'")
-parser.add_argument("-s","--separator", type = int, choices = [1,2], default=1 help = "the field separator for the OG datafile.  Default is CSV.")
+parser.add_argument("-s","--separator", type = int, choices = [1,2], default=1, help = "the field separator for the OG datafile.  Default is CSV.")
 
 args = parser.parse_args()
 
