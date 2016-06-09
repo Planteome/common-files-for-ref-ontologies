@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 #OG_datafile.csv must be in the same format as the file contained in this repo
 #Trait_map.csv must also be in the same format as the sample file contained in this repo
 #test config:  "/Users/meiera/Documents/Jaiswal/Planteome/IRRI/irri_data_text/test_10line.txt" "/Users/meiera/Documents/Jaiswal/Planteome/IRRI/jeffs_trait_map.txt" "4530" "GRIMS" "/Users/meiera/Documents/Jaiswal/Planteome/IRRI/"
@@ -17,9 +19,10 @@ parser.add_argument("traitmap", help = "this is a file that maps the headers of 
 parser.add_argument("database", help = "This is the database that holds the germplasm.")
 parser.add_argument("-o","--outdir", help = "The directory you would like the GAF file written to.")
 parser.add_argument("-t","--taxon", help = "The NCBI taxon ID number for the species being annotated (Default is 4530, which is Oryza sativa)")
-parser.add_argument("-e","--evidence", help = "The evidence code associated with this file's annotation")
-parser.add_argument("-c","--currator", help = "The person who did the curration.")
-parser.add_argument("-n","--outfile", help = "Name of the output file")
+parser.add_argument("-e","--evidence", help = "The evidence code associated with this file's annotation.  Default is EXP")
+parser.add_argument("-c","--currator", help = "The person who did the curration.  Default is 'austin_meier'")
+parser.add_argument("-n","--outfile", help = "Name of the output file.  Default is '<database>.assoc'")
+parser.add_argument("-s","--separator", type = int, choices = [1,2], default=1 help = "the field separator for the OG datafile.  Default is CSV.")
 
 args = parser.parse_args()
 
@@ -64,6 +67,14 @@ if args.outfile:
 else:
     outfile = outdir + database + ".assoc"
 
+# OG separator/delimiter selection:
+if args.separator == 2:
+    delimiter = '\t'
+else:
+    delimiter = ','
+
+
+
 
 print "New association file has been created: " + outfile
 
@@ -91,8 +102,8 @@ with open(traitmap,'r') as x:
 #                        Get trait names
 #########################################################################
 with open(OG_datafile, 'r') as f:
-    headers = f.readline().strip().split(",")       #for csv
-    #headers = f.readline().strip().split("\t")      #for tsv
+    headers = f.readline().strip().split(delimiter)       #delimeter was selected at program start
+
 
 traitcolumns = {}     # a dictionary of TO IDs, and their index numbers
 for item in headers:
@@ -261,8 +272,7 @@ def main():
     with open(OG_datafile,'r') as og:
         for accession in og:
             if not accession.startswith("#"):
-                accessionlist = accession.strip().split(',')        #for csv
-                #accessionlist = accession.strip().split('\t')        #for tsv
+                accessionlist = accession.strip().split(delimiter)        #delimiter selected at program start
                 #print accession
                 #print accessionlist
                 for TO_num in traitcolumns:
@@ -274,4 +284,5 @@ def main():
 #                    run actual code here
 #########################################################################
 
-main()
+if __name__ == "__main__":
+    main()
