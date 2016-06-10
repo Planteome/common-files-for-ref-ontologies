@@ -2,9 +2,9 @@
 
 #OG_datafile.csv must be in the same format as the file contained in this repo
 #Trait_map.csv must also be in the same format as the sample file contained in this repo
-#test config:  "/Users/meiera/Documents/Jaiswal/Planteome/IRRI/irri_data_text/test_10line.txt" "/Users/meiera/Documents/Jaiswal/Planteome/IRRI/jeffs_trait_map.txt" "4530" "GRIMS" "/Users/meiera/Documents/Jaiswal/Planteome/IRRI/"
+#
 #########################################################################
-#                       imports
+#                       imports and arguments
 #########################################################################
 import time
 
@@ -23,6 +23,7 @@ parser.add_argument("-e","--evidence", help = "The evidence code associated with
 parser.add_argument("-c","--currator", help = "The person who did the curration.  Default is 'austin_meier'")
 parser.add_argument("-n","--outfile", help = "Name of the output file.  Default is '<database>.assoc'")
 parser.add_argument("-s","--separator", type = int, choices = [1,2], default=1, help = "the field separator for the OG datafile.  1 = CSV, 2 = TSV. Default is CSV.")
+parser.add_argument("-y","--synonyms", help = "The column header for the synonyms column")
 
 args = parser.parse_args()
 
@@ -67,26 +68,41 @@ if args.outfile:
 else:
     outfile = outdir + database + ".assoc"
 
+
+
 # OG separator/delimiter selection:
 if args.separator == 2:
     delimiter = '\t'
 else:
     delimiter = ','
 
-
-
-
-
-
 #########################################################################
 #                 Make the ULTIMATE TRAIT DICTIONARY
 #########################################################################
 
-with open(OG_datafile, 'r') as f:
-    headers = f.readline().strip().split(delimiter)       #delimeter was selected at program start
+with open(OG_datafile, 'r') as h:
+    headers = h.readline().strip().split(delimiter)       #delimeter was selected at program start
 
 
 traitdict = {}
+"""
+traitdict is a dictionary that contains all the traits specified in the mapping file.  Each trait is its own dictionary.
+The result is something like a json:
+{
+'APCO':
+	{
+	'toID': 'TO:00000001',
+	'evidence':'EXP',
+	'colnum': 3
+	},
+'plant height':
+	{
+	'toID': 'TO:00000002',
+	'evidence':'IMP',
+	'colnum': 4
+	}
+}
+"""
 with open(traitmap,'r') as x:
     for traitname in x:
         line1 = traitname.strip('\n')
@@ -100,31 +116,33 @@ with open(traitmap,'r') as x:
             traitdict[line[0]]['colnum'] = headers.index(line[0])
 
 
-def gafline(phenotype_object,trait, outfile):
-    TO_num = traitdict[trait]['toID']
-    trait_index = int(traitdict[trait]['colnum'])
+def gafline(og_data_line,trait, outfile):
+    """Send in a line of an original file, have a line returned in GAF."""
+    TO_ID = traitdict[trait]['toID']  #pull the toID out of the trait.
+    trait_index = int(traitdict[trait]['colnum'])   #pull out the index/column number that the specific trait is located in
+    
     #check to make sure each column call function returns a value, if any return False, it will not write a GAF line
-    if col1() and col2(phenotype_object) and col3(phenotype_object)  and col5(TO_num) and col6(phenotype_object) and col7(trait) \
-             and col9() and col12() and col13(phenotype_object) and col14() and col15 and col16(phenotype_object,trait,trait_index):
+    if col2(og_data_line) and col3(og_data_line)  and col5(TO_ID) and col6(og_data_line) and col7(trait) \
+             and col9() and col12() and col13(og_data_line) and col14() and col15 and col16(og_data_line,trait,trait_index):
 
         outfile.write(
 
             col1()+"\t"+
-            col2(phenotype_object)+"\t"+
-            col3(phenotype_object)+"\t"+
+            col2(og_data_line)+"\t"+
+            col3(og_data_line)+"\t"+
             col4()+"\t"+
-            col5(TO_num)+"\t"+
-            col6(phenotype_object)+"\t"+
+            col5(TO_ID)+"\t"+
+            col6(og_data_line)+"\t"+
             col7(trait)+"\t"+
-            col8(phenotype_object)+"\t"+
+            col8(og_data_line)+"\t"+
             col9()+"\t"+
-            col10(phenotype_object)+"\t"+
-            col11(phenotype_object)+"\t"+
+            col10(og_data_line)+"\t"+
+            col11(og_data_line)+"\t"+
             col12()+"\t"+
-            col13(phenotype_object)+"\t"+
+            col13(og_data_line)+"\t"+
             col14()+"\t"+
             col15()+"\t"+
-            col16(phenotype_object,trait,trait_index)+"\t"+
+            col16(og_data_line,trait,trait_index)+"\t"+
             "\n")
 
 
@@ -134,19 +152,19 @@ def col1():
     return database
 
 #required
-def col2(phenotype_object):
-    return phenotype_object[0]
+def col2(og_data_line):
+    return og_data_line[0]
 
 #required
-def col3(phenotype_object):
+def col3(og_data_line):
     #check if the accession has a name
-    if phenotype_object[1] != "":
+    if og_data_line[1] != "":
         #return the germplasm name (unless here is a germplasm symbol)
-        #Name= str(phenotype_object[1]).split('::') #not sure if I will need to convert the name to a string or edit it
-        return phenotype_object[1]
+        #Name= str(og_data_line[1]).split('::') #not sure if I will need to convert the name to a string or edit it
+        return og_data_line[1]
     else:
         #if there is no name, I had it print the database and the accession number instead
-        nameaccession = database +':' + str(phenotype_object[0])
+        nameaccession = database +':' + str(og_data_line[0])
         return nameaccession
 
 #not required
@@ -154,15 +172,15 @@ def col4():
     return ""
 
 #required
-def col5(TO_num):
+def col5(TO_ID):
     #return the TO:xxxxxxxx or CO:xxxxxxxx
-    return TO_num
+    return TO_ID
 
 #required
-def col6(phenotype_object):
+def col6(og_data_line):
     #check to see if there is a reference in OG, if no ref, use the database name
-    if phenotype_object[2] != "":
-        return phenotype_object[2]
+    if og_data_line[2] != "":
+        return og_data_line[2]
     else:
         return database
 
@@ -172,11 +190,11 @@ def col7(trait):
     return traitdict[trait]['evidence']
 
 #not required
-def col8(phenotype_object):
+def col8(og_data_line):
     #check if the OG contains a country
-    if phenotype_object[3] != "":
+    if og_data_line[3] != "":
         #return the relationship "from_country" and the country of origin
-        country_origin = phenotype_object[3]
+        country_origin = og_data_line[3]
         column8 = "from_country(%s)"%(country_origin)
         return column8.replace(" ","_")
     else:
@@ -190,27 +208,37 @@ def col9():
     return "T"
 
 #not required
-def col10(phenotype_object):
+def col10(og_data_line):
 
     #check if the accession has a name
-    if phenotype_object[1] != "":
+    if og_data_line[1] != "":
         #return the germplasm name (unless there is a germplasm symbol)
-        return phenotype_object[1]
+        return og_data_line[1]
     else:
         #if there is no name, I had it print the database and the accession number instead
-        nameaccession = database +':' + str(phenotype_object[0])
+        nameaccession = database +':' + str(og_data_line[0])
         return nameaccession
 
 
 #not required
-def col11(phenotype_object):
+def col11(og_data_line):
     #get synonyms
-    #in this case, there is no synonyms... Can't think of an elegant way to add them, so if someone has synonyms we can add them here
-    if 'name' in phenotype_object:
-        #Name= str(phenotype_object['name']).split('::')
-        return "this should never get printed"
+    if args.synonyms:
+        syndex = headers.index(args.synonyms)
+        try:
+            return og_data_line[syndex]
+        except:
+            return ""
     else:
         return ""
+
+
+    # #in this case, there is no synonyms... Can't think of an elegant way to add them, so if someone has synonyms we can add them here
+    # if 'name' in og_data_line:
+    #     #Name= str(og_data_line['name']).split('::')
+    #     return "this should never get printed"
+    # else:
+    #     return ""
 
 
 #required
@@ -219,7 +247,7 @@ def col12():
     return "germplasm"
 
 #required
-def col13(phenotype_object):
+def col13(og_data_line):
     #taxon
     return taxonID
 
@@ -236,9 +264,10 @@ def col15():
 
 
 #not required for GAF, but required for germplasm
-def col16(phenotype_object,trait,trait_index):
-    phenotype_value= phenotype_object[trait_index]  #phenotype_object[traitcolumns[TO_num]]
-    #phenotypename = traitdict.keys()[traitdict.values().index(TO_num)].replace(" ","_")
+def col16(og_data_line,trait,trait_index):
+    """pass the data line, the trait, and the column number of that trait, return column 16"""
+    phenotype_value= og_data_line[trait_index]  # returns the value from the original data that is in that trait's column
+
     if phenotype_value != "":
         return "has_phenotype_score(" + trait + "=" + phenotype_value +")"
     else:
