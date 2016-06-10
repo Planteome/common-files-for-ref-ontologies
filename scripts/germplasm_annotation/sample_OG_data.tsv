@@ -1,0 +1,6 @@
+#ID	name	reference	origin_location	plant_height	leaf_color
+1	Tall Greeny	PMID:1234567	United States	1.9m	Green
+2	Short yellow	PMID:1234568	Brazil	0.7m	Yellow
+3	Medium Red	PMID:1234569	China	1.3m	Red
+4	IndividualX	PMID:1234570	France	1.0m	Green
+5	IndividualY	PMID:1234571	Japan	1.2m	Yellow
